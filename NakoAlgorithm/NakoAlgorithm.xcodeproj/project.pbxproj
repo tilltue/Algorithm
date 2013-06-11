@@ -1,0 +1,308 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2295A0E81766F99100C7742C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2295A0E71766F99100C7742C /* UIKit.framework */; };
+		2295A0EA1766F99100C7742C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2295A0E91766F99100C7742C /* Foundation.framework */; };
+		2295A0EC1766F99100C7742C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2295A0EB1766F99100C7742C /* CoreGraphics.framework */; };
+		2295A0EE1766F99100C7742C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2295A0ED1766F99100C7742C /* CoreData.framework */; };
+		2295A0F41766F99100C7742C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2295A0F21766F99100C7742C /* InfoPlist.strings */; };
+		2295A0F61766F99100C7742C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2295A0F51766F99100C7742C /* main.m */; };
+		2295A0FA1766F99100C7742C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2295A0F91766F99100C7742C /* AppDelegate.m */; };
+		2295A0FC1766F99100C7742C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2295A0FB1766F99100C7742C /* Default.png */; };
+		2295A0FE1766F99100C7742C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2295A0FD1766F99100C7742C /* Default@2x.png */; };
+		2295A1001766F99100C7742C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2295A0FF1766F99100C7742C /* Default-568h@2x.png */; };
+		2295A1031766F99100C7742C /* NakoAlgorithm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2295A1011766F99100C7742C /* NakoAlgorithm.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2295A0E41766F99100C7742C /* NakoAlgorithm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NakoAlgorithm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2295A0E71766F99100C7742C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2295A0E91766F99100C7742C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2295A0EB1766F99100C7742C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2295A0ED1766F99100C7742C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		2295A0F11766F99100C7742C /* NakoAlgorithm-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NakoAlgorithm-Info.plist"; sourceTree = "<group>"; };
+		2295A0F31766F99100C7742C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2295A0F51766F99100C7742C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2295A0F71766F99100C7742C /* NakoAlgorithm-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NakoAlgorithm-Prefix.pch"; sourceTree = "<group>"; };
+		2295A0F81766F99100C7742C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2295A0F91766F99100C7742C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2295A0FB1766F99100C7742C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		2295A0FD1766F99100C7742C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		2295A0FF1766F99100C7742C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		2295A1021766F99100C7742C /* NakoAlgorithm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NakoAlgorithm.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2295A0E11766F99100C7742C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2295A0E81766F99100C7742C /* UIKit.framework in Frameworks */,
+				2295A0EA1766F99100C7742C /* Foundation.framework in Frameworks */,
+				2295A0EC1766F99100C7742C /* CoreGraphics.framework in Frameworks */,
+				2295A0EE1766F99100C7742C /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2295A0DB1766F99100C7742C = {
+			isa = PBXGroup;
+			children = (
+				2295A0EF1766F99100C7742C /* NakoAlgorithm */,
+				2295A0E61766F99100C7742C /* Frameworks */,
+				2295A0E51766F99100C7742C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2295A0E51766F99100C7742C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2295A0E41766F99100C7742C /* NakoAlgorithm.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2295A0E61766F99100C7742C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2295A0E71766F99100C7742C /* UIKit.framework */,
+				2295A0E91766F99100C7742C /* Foundation.framework */,
+				2295A0EB1766F99100C7742C /* CoreGraphics.framework */,
+				2295A0ED1766F99100C7742C /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2295A0EF1766F99100C7742C /* NakoAlgorithm */ = {
+			isa = PBXGroup;
+			children = (
+				2295A0F81766F99100C7742C /* AppDelegate.h */,
+				2295A0F91766F99100C7742C /* AppDelegate.m */,
+				2295A1011766F99100C7742C /* NakoAlgorithm.xcdatamodeld */,
+				2295A0F01766F99100C7742C /* Supporting Files */,
+			);
+			path = NakoAlgorithm;
+			sourceTree = "<group>";
+		};
+		2295A0F01766F99100C7742C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2295A0F11766F99100C7742C /* NakoAlgorithm-Info.plist */,
+				2295A0F21766F99100C7742C /* InfoPlist.strings */,
+				2295A0F51766F99100C7742C /* main.m */,
+				2295A0F71766F99100C7742C /* NakoAlgorithm-Prefix.pch */,
+				2295A0FB1766F99100C7742C /* Default.png */,
+				2295A0FD1766F99100C7742C /* Default@2x.png */,
+				2295A0FF1766F99100C7742C /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2295A0E31766F99100C7742C /* NakoAlgorithm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2295A1061766F99100C7742C /* Build configuration list for PBXNativeTarget "NakoAlgorithm" */;
+			buildPhases = (
+				2295A0E01766F99100C7742C /* Sources */,
+				2295A0E11766F99100C7742C /* Frameworks */,
+				2295A0E21766F99100C7742C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NakoAlgorithm;
+			productName = NakoAlgorithm;
+			productReference = 2295A0E41766F99100C7742C /* NakoAlgorithm.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2295A0DC1766F99100C7742C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = nako;
+			};
+			buildConfigurationList = 2295A0DF1766F99100C7742C /* Build configuration list for PBXProject "NakoAlgorithm" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2295A0DB1766F99100C7742C;
+			productRefGroup = 2295A0E51766F99100C7742C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2295A0E31766F99100C7742C /* NakoAlgorithm */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2295A0E21766F99100C7742C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2295A0F41766F99100C7742C /* InfoPlist.strings in Resources */,
+				2295A0FC1766F99100C7742C /* Default.png in Resources */,
+				2295A0FE1766F99100C7742C /* Default@2x.png in Resources */,
+				2295A1001766F99100C7742C /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2295A0E01766F99100C7742C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2295A0F61766F99100C7742C /* main.m in Sources */,
+				2295A0FA1766F99100C7742C /* AppDelegate.m in Sources */,
+				2295A1031766F99100C7742C /* NakoAlgorithm.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2295A0F21766F99100C7742C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2295A0F31766F99100C7742C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2295A1041766F99100C7742C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2295A1051766F99100C7742C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2295A1071766F99100C7742C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NakoAlgorithm/NakoAlgorithm-Prefix.pch";
+				INFOPLIST_FILE = "NakoAlgorithm/NakoAlgorithm-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2295A1081766F99100C7742C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NakoAlgorithm/NakoAlgorithm-Prefix.pch";
+				INFOPLIST_FILE = "NakoAlgorithm/NakoAlgorithm-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2295A0DF1766F99100C7742C /* Build configuration list for PBXProject "NakoAlgorithm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2295A1041766F99100C7742C /* Debug */,
+				2295A1051766F99100C7742C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2295A1061766F99100C7742C /* Build configuration list for PBXNativeTarget "NakoAlgorithm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2295A1071766F99100C7742C /* Debug */,
+				2295A1081766F99100C7742C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2295A1011766F99100C7742C /* NakoAlgorithm.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2295A1021766F99100C7742C /* NakoAlgorithm.xcdatamodel */,
+			);
+			currentVersion = 2295A1021766F99100C7742C /* NakoAlgorithm.xcdatamodel */;
+			path = NakoAlgorithm.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 2295A0DC1766F99100C7742C /* Project object */;
+}
