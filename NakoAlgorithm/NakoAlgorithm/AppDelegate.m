@@ -54,7 +54,7 @@
 // 인접한 값을 비교하는 정렬이다. 쉽게 이해하자면 배열의 개수 -1 만큼 스텝이 반복되어야 하며 이 이유는 가장 오른쪽 , 즉 가장 큰 값은 첫 정렬시 구해지기 때문이다.
 - (void)BubbleSort:(NSInteger *)arr withLength:(NSInteger)len
 {
-    int temp;
+    int temp = 0;
     for( int i = 0; i < len -1; i ++ )
         for( int j = 1; j < len - i; j++ )
             if( arr[j -1] > arr[j] ){
@@ -63,6 +63,26 @@
                 arr[j] = temp;
             }
     
+}
+
+//퀵정렬
+- (void)QuickSort:(NSInteger *)arr withLength:(NSInteger)len
+{
+    if( len < 2) return;
+    int pivot = arr[len/2];
+    int *left = arr;
+    int *right = arr + len -1;
+    int temp = 0;
+    while ( left <= right) {
+        if( *left < pivot ){ left++; continue;}
+        if( *right > pivot ){ right--; continue;}
+        temp = *left;
+        *left++ = *right;
+        *right-- = temp;
+    }
+    //left 와 right  포인트 변수 값을 활용하여 좌/ 우측의 배열의 길이를 구한다.
+    [self QuickSort:arr withLength:right-arr+1];
+    [self QuickSort:left withLength:arr+len-left];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -83,7 +103,8 @@
         NSLog(@"Not Found");
     
     NSInteger bsTestArr[] = {0,90,20,25,30,50,80,70,10,5};
-    [self BubbleSort:bsTestArr withLength:10];
+    //[self BubbleSort:bsTestArr withLength:10];
+    [self QuickSort:bsTestArr withLength:10];
     for( int i = 0; i < 10 ; i ++ )
         NSLog(@"%d",bsTestArr[i]);
 
