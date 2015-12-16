@@ -33,19 +33,19 @@
 }
 
 //이진 탐색.
-- (NSInteger)BinarySearch:(NSInteger *)arr withRow:(NSInteger)row withHigh:(NSInteger)high withValue:(NSInteger)value
+- (NSInteger)BinarySearch:(NSInteger *)arr withLow:(NSInteger)low withHigh:(NSInteger)high withValue:(NSInteger)value
 {
-    if( row > high )
+    if( low > high )
         return -1;
     
-    int mid = (row + high) / 2;
+    int mid = (low + high) / 2;
     
     if( arr[mid] == value )
         return mid;
     else if( arr[mid] > value )
-        return [self BinarySearch:arr withRow:row withHigh:mid-1 withValue:value];
+        return [self BinarySearch:arr withLow:low withHigh:mid-1 withValue:value];
     else if( arr[mid] < value )
-        return [self BinarySearch:arr withRow:mid+1 withHigh:high withValue:value];
+        return [self BinarySearch:arr withLow:mid+1 withHigh:high withValue:value];
     
     return -1;
 }
