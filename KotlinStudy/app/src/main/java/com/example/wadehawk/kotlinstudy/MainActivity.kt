@@ -3,6 +3,7 @@ package com.example.wadehawk.kotlinstudy
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.util.Range
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,8 +16,11 @@ class MainActivity : AppCompatActivity() {
         for ( item in result ) {
             Log.d("AL","$item")
         }
+        Log.d("AL","binary search start ( recursive implementation )")
+        var index = Algorithm().binarySearch<Int>(result,7, Range(0,array.count()-1))
+        Log.d("AL","binary search result $index")
         Log.d("AL","binary search start")
-        val index = Algorithm().binarySearch(result,7)
+        index = Algorithm().binarySearch2(result,7)
         Log.d("AL","binary search result $index")
     }
 }
