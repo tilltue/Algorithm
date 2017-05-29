@@ -22,5 +22,21 @@ class MainActivity : AppCompatActivity() {
         Log.d("AL","binary search start")
         index = Algorithm().binarySearch2(result,7)
         Log.d("AL","binary search result $index")
+        binarySearchTreeTest()
+    }
+    fun binarySearchTreeTest() {
+        /*
+        val tree = BinarySearchTree<Int>(7)
+        tree.insert(2)
+        tree.insert(5)
+        tree.insert(10)
+        tree.insert(9)
+        tree.insert(1)*/
+        //constructor root and insert array
+        val tree = BinarySearchTree<Int>(7,arrayOf(2,5,10,9,1))
+        val test = tree.description
+        Log.d("AL","$test")
+        val search = tree.search(9)?.value
+        Log.d("AL","binary search tree search result : $search")
     }
 }

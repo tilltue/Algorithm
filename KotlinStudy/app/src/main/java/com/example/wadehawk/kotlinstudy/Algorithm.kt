@@ -33,7 +33,7 @@ fun Algorithm.insertionSort(array: Array<Int>): Array<Int> {
 /**
  * Binary Search
  * Big-O : O( log n )
- * 1,000,000 개의 요소에서 서칭할때 log_2(1,000,000) = 19.9 20 단계만 거치면 된다.
+ * 1,000,000 개의 요소에서 서칭할때 log_2(1,000,000) = 19.9, 즉 20 단계만 거치면 된다.
  */
 //재귀 함수
 fun <T: Comparable<T>> Algorithm.binarySearch(array: Array<T>, key: T, range: Range<Int>): Int {
