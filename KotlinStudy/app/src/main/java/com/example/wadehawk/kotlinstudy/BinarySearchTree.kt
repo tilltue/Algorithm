@@ -28,15 +28,15 @@ class BinarySearchTree<T: Comparable<T>> constructor(value: T) {
     val count: Int
         get() = (left?.count ?: 0) + 1 + (right?.count ?: 0)
     fun insert(value: T) {
-        if ( value < this.value ) {
-            if( this.left != null ){
+        if (value < this.value) {
+            if (this.left != null) {
                 this.left?.insert(value)
             }else {
                 this.left = BinarySearchTree<T>(value)
                 this.left?.parent = this
             }
-        }else if ( value > this.value ) {
-            if( this.right != null ){
+        }else if (value > this.value) {
+            if (this.right != null) {
                 this.right?.insert(value)
             }else {
                 this.right = BinarySearchTree<T>(value)
@@ -64,13 +64,37 @@ val <T:Comparable<T>> BinarySearchTree<T>.description: String get() {
     }
     return s
 }
-
+/*
+    재귀 사용
+ */
 fun <T:Comparable<T>> BinarySearchTree<T>.search(value: T): BinarySearchTree<T>? {
-    if( this.value < value ){
+    if (this.value < value) {
         return this.right?.search(value)
-    }else if( this.value > value ){
+    }else if (this.value > value) {
         return this.left?.search(value)
     }else {
         return this
     }
 }
+/*
+    반복문 사용
+ */
+fun <T:Comparable<T>> BinarySearchTree<T>.search2(value: T): BinarySearchTree<T>? {
+    var node: BinarySearchTree<T>? = this
+    while (node != null) {
+        if (node.value < value) {
+            node = node?.right
+        }else if (node.value > value) {
+            node = node?.left
+        }else {
+            return node
+        }
+    }
+    return null
+}
+
+/*
+    이외에 더 연습 거리가 있지만 다른 알고리즘 기본 구현 끝내고 이어서 해보자
+    Traversal 부터
+    https://github.com/raywenderlich/swift-algorithm-club/tree/master/Binary%20Search%20Tree#traversal
+ */

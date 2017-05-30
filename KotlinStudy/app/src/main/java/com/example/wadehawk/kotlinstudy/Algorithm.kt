@@ -72,3 +72,53 @@ fun Algorithm.binarySearch2(array: Array<Int>, key: Int): Int {
     }
     return -1
 }
+/**
+ * Merge Sort
+ * Big-O : O(n log n)
+ * 기준 점을 잡고 <- | -> 로 배열을 더이상 나눌수 없을때 까지 각각 나눈다
+ * 각 더미들을 순차적으로 비교하며 병합한다
+ * 좌측 요소 0,1,2 인덱싱 하며 우측 요소 0,1,2 인덱싱 하며 각 요소들을 비교하며 병합
+ */
+fun <T:Comparable<T>> Algorithm.mergeSort(list: List<T>): List<T> {
+    fun merge(leftPile: List<T>, rightPile: List<T>): MutableList<T> {
+        var leftIndex = 0
+        var rightIndex = 0
+        var orderedPile = mutableListOf<T>()
+        while (leftIndex < leftPile.count() && rightIndex < rightPile.count()) {
+            if (leftPile[leftIndex] < rightPile[rightIndex]) {
+                orderedPile.add(leftPile[leftIndex])
+                leftIndex+=1
+            }else if (leftPile[leftIndex] > rightPile[rightIndex]) {
+                orderedPile.add(rightPile[rightIndex])
+                rightIndex+=1
+            }else {
+                orderedPile.add(leftPile[leftIndex])
+                orderedPile.add(rightPile[rightIndex])
+                leftIndex+=1
+                rightIndex+=1
+            }
+        }
+        while (leftIndex < leftPile.count()) {
+            orderedPile.add(leftPile[leftIndex])
+            leftIndex+=1
+        }
+        while (rightIndex < rightPile.count()) {
+            orderedPile.add(rightPile[rightIndex])
+            rightIndex+=1
+        }
+        return orderedPile
+    }
+    return when {
+        list.count() == 1 -> list
+        else -> {
+            val middleIndex = list.count() / 2
+            val leftList = Algorithm().mergeSort(list.slice(IntRange(0, middleIndex - 1)))
+            val rightList = Algorithm().mergeSort(list.slice(IntRange(middleIndex, list.count() - 1)))
+            return merge(leftList, rightList).map { it as T }
+        }
+    }
+}
+/*
+    TODO: merge sort
+    bottom up implementation 구현 연습
+ */
