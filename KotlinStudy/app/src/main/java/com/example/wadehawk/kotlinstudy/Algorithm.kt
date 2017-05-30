@@ -121,4 +121,5 @@ fun <T:Comparable<T>> Algorithm.mergeSort(list: List<T>): List<T> {
 /*
     TODO: merge sort
     bottom up implementation 구현 연습
+    https://github.com/raywenderlich/swift-algorithm-club/tree/master/Merge%20Sort
  */
