@@ -73,7 +73,7 @@ fun Algorithm.binarySearch2(array: Array<Int>, key: Int): Int {
     return -1
 }
 /**
- * Merge Sort
+ * Merge Sort : 폰노이만
  * Big-O : O(n log n)
  * 기준 점을 잡고 <- | -> 로 배열을 더이상 나눌수 없을때 까지 각각 나눈다
  * 각 더미들을 순차적으로 비교하며 병합한다
