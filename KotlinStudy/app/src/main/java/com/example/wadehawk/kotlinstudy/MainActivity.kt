@@ -50,10 +50,10 @@ class MainActivity : AppCompatActivity() {
 
     fun mergeSortTest() {
         var list = listOf(11, 59, 3, 2, 53, 17, 31, 7, 19, 67, 47, 13, 37, 61, 29, 43, 5, 41, 23)
-        val result = Algorithm().mergeSort(list)
-        Log.d("AL","merge sort result")
-        for ( item in result ) {
-            Log.d("AL","$item")
-        }
+        var result = Algorithm().mergeSortTD(list)
+        Log.d("AL","merge sort top-down result : $result")
+        result = Algorithm().mergeSortBU(list)
+
+        Log.d("AL","merge sort bottom-up result : $result")
     }
 }
