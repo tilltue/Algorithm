@@ -13,7 +13,7 @@ class Algorithm { }
  * Insertion Sort
  * Big-O : O(n^2)
  * 2개의 중첩루프가 존재하기 때문
- * 작은 크기의 배열에서 quick sort O(n log n)등보다 빠르다
+ * 작은 크기의 배열에서 quick sort O(n log n)등보다 빠르다.
  */
 
 fun Algorithm.insertionSort(array: Array<Int>): Array<Int> {
