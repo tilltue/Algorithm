@@ -54,7 +54,7 @@ fun <T:Comparable<T>> Algorithm.mergeSortTD(list: List<T>): List<T> {
 }
 /**
  * Bottom-up implementation
- * 아래와 같은 흐름으로 정렬됨
+ * 아래와 같은 흐름으로 정렬됨 더블버퍼링 사용 : z
 -- 좌측 배열을 in 우측 배열에 out
 -- 우측 배열을 in 좌측 배열에 out
 -- 가장 작은 단위를 비교 해서 큰단위로 올라간다 1,2,3... width
