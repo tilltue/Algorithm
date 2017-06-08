@@ -12,8 +12,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         //insertSortTest()
         //binarySearchTreeTest()
-        //mergeSortTest()
-        boyerMooreStringSearchTest()
+        //boyerMooreStringSearchTest()
+        selectionSortTest()
+        mergeSortTest()
     }
 
     fun insertSortTest() {
@@ -49,6 +50,12 @@ class MainActivity : AppCompatActivity() {
         Log.d("AL","binary search tree search result : $search")
     }
 
+    fun selectionSortTest() {
+        var list = listOf(11, 59, 3, 2, 53, 17, 31, 7, 19, 67, 47, 13, 37, 61, 29, 43, 5, 41, 23)
+        var result = Algorithm().selectionSort(list)
+        Log.d("AL","selection sort result : $result")
+    }
+
     fun mergeSortTest() {
         var list = listOf(11, 59, 3, 2, 53, 17, 31, 7, 19, 67, 47, 13, 37, 61, 29, 43, 5, 41, 23)
         var result = Algorithm().mergeSortTD(list)
@@ -56,6 +63,7 @@ class MainActivity : AppCompatActivity() {
         result = Algorithm().mergeSortBU(list)
         Log.d("AL","merge sort bottom-up result : $result")
     }
+
     fun boyerMooreStringSearchTest() {
         val string = "Created by wade.hawk on 2017. 6. 1.."
         val index = Algorithm().BoyerMooreStringSearch(string,"hawk")
