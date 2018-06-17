@@ -9,7 +9,7 @@ func searchIcecreamParlor() {
     print(icecreamParlor(m: 4, arr: [1,4,5,3,2]))
     print(icecreamParlor(m: 4, arr: [2,2,4,3]))
 }
-searchIcecreamParlor()
+//searchIcecreamParlor()
 
 func searchMissingNumber() {
     let arr  = Array("203 204 205 206 207 208 203 204 205 206".split(separator: " ")).map{ Int($0)! }
@@ -17,5 +17,12 @@ func searchMissingNumber() {
     let ret = missingNumbers(arr: arr, brr: arr2)
     print(ret)
 }
-searchMissingNumber()
+//searchMissingNumber()
 
+func findMedian() {
+    let arr = arr10000
+    let ret = findMedian2(arr: arr)
+    print(ret)
+}
+
+findMedian()
