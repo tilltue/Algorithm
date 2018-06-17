@@ -44,36 +44,20 @@ func binarySearch(array: [Int], low: Int, high: Int, searchKey: Int) -> Int {
 }
 
 // 퀵 정렬 : 하나의 기준값을 정하고 큰값은 우측으로 작은 값은 좌측으로 정렬해 나가는 알고리즘.
-func patiton(inout array: [Int], left: Int , right: Int) -> Int {
-    
-    let pivot = array[left]
-    var low = left
-    var high = right+1
-    
-    repeat{
-        
-        repeat{
-            low++
-        }while( array[low] < pivot )
-        
-        repeat{
-            high--
-        }while( array[high] > pivot )
-        
-        if low < high {
-            let temp = array[high]
-            array[high] = array[low]
-            array[low] = temp
+func patition(array: inout [Int], _ low: Int, _ high: Int) -> Int {
+    let pivot = array[high]
+    var i = low
+    for j in low..<high {
+        if array[j] <= pivot {
+            (array[i], array[j]) = (array[j], array[i])
+            i += 1
         }
-        
-    }while( low < high )
-    let temp = array[high]
-    array[high] = array[left]
-    array[left] = temp
-    return high
+    }
+    (array[i], array[high]) = (array[high], array[i])
+    return i
 }
 
-func quickSort(inout array: [Int], left: Int , right: Int) {
+func quickSort(array: inout [Int], left: Int , right: Int) {
     
     if left < right {
         let pivot = patiton(&array, left: left, right: right)
@@ -82,7 +66,7 @@ func quickSort(inout array: [Int], left: Int , right: Int) {
     }
 }
 
-func quickSortMid(inout array: [Int], left: Int, right: Int) {
+func quickSortMid(array: inout [Int], left: Int, right: Int) {
     
     var leftPos = left
     var rightPos = right
@@ -110,7 +94,7 @@ func quickSortMid(inout array: [Int], left: Int, right: Int) {
     }
 }
 
-func bubbleSort(inout array: [Int]){
+func bubbleSort(array: inout [Int]){
     
     let length = array.count
     

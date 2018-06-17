@@ -25,4 +25,4 @@ func findMedian() {
     print(ret)
 }
 
-findMedian()
+//findMedian()
