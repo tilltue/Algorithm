@@ -26,3 +26,42 @@ func findMedian() {
 }
 
 //findMedian()
+
+func fullCountingSort(arr: [(Int,String)]) -> [(Int,String)] {
+    var countArr = [(Int,Int)](repeating: (0,0), count: 100)
+    //print(arr)
+    for e in arr {
+        countArr[e.0].0 += 1
+        countArr[e.0].1 += 1
+    }
+    //print(countArr)
+    for index in 1..<countArr.count {
+        let sum = countArr[index].0 + countArr[index-1].0
+        countArr[index] = (sum,countArr[index].1)
+    }
+    //print(countArr)
+    var sortedArr = [(Int,String)](repeating: (0,""), count: arr.count)
+    for index in 0..<arr.count {
+        let e = arr[index]
+        let insertIndex = countArr[e.0].0 - countArr[e.0].1
+        sortedArr[insertIndex] = (e.0, index < arr.count/2 ? "-" : e.1)
+        countArr[e.0].1 -= 1
+    }
+    //    print("-----")
+    //    print(sortedArr)
+    return sortedArr
+}
+
+func fullCountSort() {
+    if let url = Bundle.main.url(forResource: "CountingSort", withExtension: "txt"), let text = try? String(contentsOf: url) {
+        let arr = Array(text.split(separator: "\n").map{ $0.split(separator: " ") }.map{ (Int($0[0])!,String($0[1])) })
+        let sortedArr = fullCountingSort(arr: arr)
+        var ret = ""
+        for e in sortedArr {
+            ret += "\(e.1) "
+        }
+        print(ret)
+    }
+}
+
+fullCountSort()
