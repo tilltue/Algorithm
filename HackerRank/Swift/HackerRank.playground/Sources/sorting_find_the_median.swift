@@ -4,7 +4,7 @@ import Foundation
 // https://www.hackerrank.com/challenges/find-the-median/problem
 // Date: 2018.06.17
 
-func patition(array: inout [Int], _ low: Int, _ high: Int) -> Int {
+public func patition(array: inout [Int], _ low: Int, _ high: Int) -> Int {
     let pivot = array[high]
     var i = low
     for j in low..<high {
