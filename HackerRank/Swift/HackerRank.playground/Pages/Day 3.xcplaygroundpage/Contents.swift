@@ -191,62 +191,6 @@ func connectedCell(matrix: [[Int]]) -> Int {
 
 // in Discussions (vote 11)
 func connectedCell2(matrix: [[Int]]) -> Int {
-    var grid = [[Int]]()
-    grid.append([Int](repeating: 0, count: matrix[0].count+2))
-    for row in matrix {
-        var newRow = [Int]()
-        newRow.append(0)
-        for e in row {
-            newRow.append(e)
-        }
-        newRow.append(0)
-        grid.append(newRow)
-    }
-    grid.append([Int](repeating: 0, count: matrix[0].count+2))
-    for row in grid {
-        print(row)
-    }
-    print("------------------ ↑ add an artificial boundary of 0 around the whole matrix")
-    var max = 0
-    for n in 1..<matrix.count {
-        for m in 1..<matrix[n].count {
-            var regionStack = [(Int,Int)]()
-            if grid[n][m] == 1 {
-                var currentRegionSize = 0
-                regionStack.append((n,m))
-                grid[n][m] = 0
-                while regionStack.count != 0 {
-                    print(regionStack)
-                    if let region = regionStack.popLast() {
-                        currentRegionSize += 1
-                        for point in [(1,0),(0,1),(1,1),(-1,0),(0,-1),(-1,-1),(-1,+1),(+1,-1)] {
-                            if grid[region.0 + point.0][region.1 + point.1] == 1 {
-                                regionStack.append((region.0 + point.0, region.1 + point.1))
-                                grid[region.0+point.0][region.1+point.1] = 0
-                            }
-                        }
-                    }
-                }
-                if currentRegionSize > max {
-                    max = currentRegionSize
-                }
-                print("------------------ ↑ dfs and element change 0 by visit")
-                for row in grid {
-                    print(row)
-                }
-                print("------------------ ↑ changed grid")
-            }else{
-                print("--- skip\(n,m) ---")
-            }
-        }
-    }
-    print("------------------")
-    print("-----  End \(max) -----")
-    print("------------------")
-    return max
-}
-
-func connectedCell3(matrix: [[Int]]) -> Int {
     var grid = matrix
     for row in grid {
         print(row)
@@ -301,7 +245,6 @@ func connectedCellInGrid() {
     if let url = Bundle.main.url(forResource: "ConnectedCellInGrid", withExtension: "txt"), let text = try? String(contentsOf: url) {
         let arr = Array(text.split(separator: "\n").map{ $0.split(separator: " ").compactMap{ Int($0) }})
         let ret = connectedCell(matrix: arr)
-        connectedCell3(matrix: arr)
         print(ret)
     }
 }
