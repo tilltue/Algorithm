@@ -6,104 +6,116 @@ import Foundation
 
 //ifailuhkqq
 //kkkk
-/*
-func sherlockAndAnagrams(s: String) -> Int {
-    var string = Array(s)
-    var anagrams = [(Int,String)]()
-    for len in 1..<string.count {
-//        print(len)//123
-        for index in 0..<string.count-1 {
-            if index + len > string.count - 1 {
-                continue
-            }
-//            print(index,string[index...index+len-1])
-            anagrams.append((index,String(string[index...index+len-1])))
-        }
-//        print("--")
-    }
-//    print(anagrams)
-//    print("----- find anagrams -----")
-    var ret = [((Int,String),(Int,String))]()
-    for word in anagrams {
-        let len = word.1.count
-        for index in stride(from: string.count-1, to: word.0, by: -1) {
-            if index + len - 1 > string.count - 1 {
-                continue
-            }
-            var arr = Array(string[index...index+len-1])
-            var stack = Array(word.1)
-            while stack.count != 0 {
-                if let char = stack.popLast() {
-                    if let index = arr.index(of: char) {
-                        arr.remove(at: index)
-                    }
-                }
-            }
-            
-            if arr.count == 0 {
-//                print("\(word.0,word.1) / \(index,String(string[index...index+len-1])))")
-                ret.append((word, (index, String(string[index...index+len-1]))))
-            }
-        }
-    }
-    return ret.count
-}
-*/
 
 func sherlockAndAnagrams(s: String) -> Int {
     var string = Array(s)
-    var anagrams = [(Int,String)]()
-    func findBackward(src: Array<Character>, char: Character) -> [Int] {
-        print("findBackward:  \(char),\(src)")
-        var searchIndexes = [Int]()
-        for searchIndex in stride(from: src.count-1, to: -1, by: -1) {
-            if src[searchIndex] == char {
-                print("++\(searchIndex,src[searchIndex],char)")
-                searchIndexes.append(searchIndex)
-            }
-        }
-        return searchIndexes
-    }
+    var ret = 0
+    var dict = [String:Int]()
     for index in 0..<string.count {
-        if index+1 > string.count-1 {
-            break
-        }
-        print(index)
-        let split = Array(string[index+1...string.count-1])
-        //print(split)
-        let findIndexes = findBackward(src: split, char: string[index])
-        //첫번째 캐릭터 부터 찾는데 뒤에서부터 인덱스를 찾는다 찾는 순간 비교한다. 애너그램이 되는지. 글자수를 늘려가면서 비교. 중요한건, out of range 를 체크하는 로직. 단순하게 체크하는 것으로도 충분. 그리고, 같은 문자열인지 비교할때
-        //ifai 비교시 i / i 비교 -> if / ai 비교 -> ifa / fai 비교.
-        // ifa / fai 비교시 index 를 늘려가면서 i,f 가 서로 있는지, f,a 가 서로 있는지, a,i 가 서로 있는지. dictionary 를 사용하면 좋을듯.
-        for findIndex in findIndexes {
-        }
-        /*
-        if findIndexes.count > 0 {
-            print((index,String(string[index])))
-            anagrams.append((index,String(string[index])))
-            for findIndex in findIndexes {
-                if index != index+findIndex {
-                    print(index,index+findIndex,string[index...index+findIndex])
-                    anagrams.append((index,String(string[index...index+findIndex])))
-                    anagrams.append((index+findIndex,String(split[findIndex])))
-                    print((index+findIndex,String(split[findIndex])))
-                }else {
-                    anagrams.append((index+findIndex,String(string[index+findIndex])))
-                    print((index+findIndex,String(string[index+findIndex])))
-                }
+        for len in 0..<string.count-index {
+            let str = String(string[index...index+len].sorted())
+            if let value = dict[str] {
+                dict[str] = value + 1
+            }else {
+                dict[str] = 1
             }
-        }*/
+        }
     }
-    print(anagrams)
-    return 0
+    dict = dict.filter{ $0.value > 1 }
+    ret = dict.reduce(0) { (result, dict) -> Int in
+        let sum = Array(1...(dict.value-1)).reduce(0, { (result, e) -> Int in
+            return result + e
+        })
+        return result + sum
+    }
+    return ret
 }
 
 func sherlockAndAnagrams() {
     if let url = Bundle.main.url(forResource: "Sherlock", withExtension: "txt"), let text = try? String(contentsOf: url) {
-        let arr = Array(text.split(separator: "\n").map{ String($0) })
-        print(sherlockAndAnagrams(s: "kkkkkk"))
-        //ifailuhkqq
+        let arr = text.split(separator: "\n").map{ String($0) }
+        for string in arr {
+            print(sherlockAndAnagrams(s: String(string)))
+        }
+    }
+}
+//a,b,c
+//a,b b,c a,c
+sherlockAndAnagrams()
+
+// New Year Chaos
+// https://www.hackerrank.com/challenges/new-year-chaos/problem
+// Date: 2018.07.02
+
+struct Person {
+    var bribeCount: Int
+    var id: Int
+    init(id: Int) {
+        self.bribeCount = 0
+        self.id = id
     }
 }
 
-sherlockAndAnagrams()
+func minimumBribes(q: [Int]) -> Void {
+    print(q)
+    // 정답은: array 를 순회하면서 자기보다 앞에 있는 값중 높은 값이 있다면 카운트를 증가시키면서 값을 구하면 된다. 이상태에서 to chaotic 만 찾아내면 됨.
+    // 풀지는 못함
+//    var persons = [Int: Person]()
+//    q.sorted().map{ Person(id: $0) }.forEach { (person) in
+//        persons.updateValue(person, forKey: person.id)
+//    }
+//    var pivot = 0
+//    var chaotic = false
+//    func swap(to: Int, from: Int) {
+//        if var toPerson = persons[to], let fromPerson = persons[from] {
+//            persons[to] = fromPerson
+//            toPerson.bribeCount += 1
+//            persons[from] = toPerson
+//        }
+//    }
+//    while chaotic == false && pivot < q.count {
+//        for index in 0..<q.count {
+//            if q[index] == persons[index]?.id {
+//                print(index,q[index])
+//                chaotic = true
+//            }
+//        }
+//        chaotic = true
+//                print(pivot)
+//                pivot += 1
+//                break
+//            }else {
+//
+//            }
+//            print(pivot,index)
+//            if persons[index].bribeCount < 2 {
+//                print("---")
+//                print(persons.map{ $0.id })
+//                print("---")
+//            }else {
+////                print("chaotic \(persons[index])")
+//                print("Too chaotic")
+//                chaotic = true
+//                break
+//            }
+//        }
+//    }
+//    if chaotic == false {
+//        var bribeCount = 0
+//        for bribePerson in (persons.filter{ $0.bribeCount > 0 }) {
+//            bribeCount += bribePerson.bribeCount
+//        }
+//        print(bribeCount)
+//    }
+}
+
+func newYearChaos() {
+    if let url = Bundle.main.url(forResource: "NewYearChaos", withExtension: "txt"), let text = try? String(contentsOf: url) {
+        let arr = Array(text.split(separator: "\n").map{ $0.split(separator: " ").compactMap{ Int($0) }})
+        for test in arr {
+            minimumBribes(q: test)
+        }
+    }
+}
+
+newYearChaos()
