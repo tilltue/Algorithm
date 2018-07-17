@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <playground version='6.0' target-platform='ios' executeOnSourceChanges='false'>
     <pages>
-        <page name='Day1,2'/>
-        <page name='Day 3'/>
-        <page name='Day 4'/>
-        <page name='Day 5'/>
+        <page name='Day1,2 ( Icecream Parlor, Missing Number, Full count sort)'/>
+        <page name='Day 3 ( Closest Numbers, Connected Cell In Grid)'/>
+        <page name='Day 4 ( Sherlock and Anagrams, New Year Chaos)'/>
+        <page name='Day 5 ( Candies , Encryption )'/>
     </pages>
 </playground>
